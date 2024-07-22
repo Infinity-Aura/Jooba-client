@@ -11,7 +11,7 @@ import { ActionsMenu } from 'shared/components/actions-menu';
 import { User } from 'entities/user';
 
 const renderRowActions = (record: User) => {
-  const items = [
+  const items: string | any[] | undefined = [
     /*{
       component: <AdminOneGoodsDeleteMenuItem key="delete" id={record.id} />,
     },*/

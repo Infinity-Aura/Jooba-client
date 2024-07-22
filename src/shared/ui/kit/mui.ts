@@ -66,4 +66,4 @@ export type {
   CSSObject,
 } from '@mui/material';
 
-export type { SxProps } from '@mui/system';
+export type { SxProps } from '@mui/material';

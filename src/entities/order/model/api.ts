@@ -30,7 +30,7 @@ export const updateStatusOrder = async ({
   try {
     await http.patch(`/order/${order.id}/status`, {
       userId: order.userId,
-      courseId: order.courseId,
+      orderId: order.id,
       status,
     });
     return true;
@@ -57,12 +57,12 @@ export const getOrders = async (): Promise<Order[]> => {
 
 export const getOrderByUser = async ({
   userId,
-  courseId,
+  orderId,
 }: {
   userId: string;
-  courseId: string;
+  orderId: string;
 }): Promise<Order> => {
-  const { data } = await http.get(`/order/user/${userId}/course/${courseId}`);
+  const { data } = await http.get(`/order/user/${userId}/course/${orderId}`);
   return data;
 };
 

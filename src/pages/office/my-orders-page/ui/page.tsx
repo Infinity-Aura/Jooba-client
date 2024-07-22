@@ -12,7 +12,7 @@ import { ActionsMenu } from 'shared/components/actions-menu';
 import { CancelOutlinedIcon, CheckCircleOutlinedIcon } from 'shared/ui/icons';
 
 const renderRowActions = (record: OneGoods) => {
-  const items = [
+  const items: string | any[] | undefined = [
     /*{
       component: <AdminOneGoodsDeleteMenuItem key="delete" id={record.id} />,
     },*/

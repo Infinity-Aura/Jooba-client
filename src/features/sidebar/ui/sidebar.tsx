@@ -24,13 +24,13 @@ import {
   PersonRoundedIcon,
   SettingsRoundedIcon,
 } from 'shared/ui/icons';
-import { PAGES, PATHS } from 'shared/config';
+import { PATHS } from 'shared/config';
 import LogoImg from 'shared/assets/images/logo_w.png';
 
 import { sessionModel, User } from 'entities/session';
 
 import { LoginButton } from 'features/session/login';
-import { RegistrationButton } from 'features/session/registration';
+import { RegistrationCompanyButton } from 'features/session/registration-company';
 
 import * as model from '../model';
 
@@ -89,94 +89,6 @@ export const Sidebar = () => {
                 />
               </SvgIcon>
             </Box>
-          </Box>
-          <Box sx={{ mb: 3 }}>
-            <Button
-              component={HashLink}
-              to={PAGES[0].root}
-              smooth
-              variant="text"
-              color="secondary"
-              onClick={() => model.closeRequested()}
-              sx={{
-                pl: 0,
-                my: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-start',
-                '&.active': {
-                  backgroundColor: 'rgba(51, 51, 51, 0.14)',
-                  borderRadius: 0,
-                },
-                '&::before': {
-                  content: '""',
-                  background: '#FFFFFF center center no-repeat',
-                  width: 36,
-                  height: '1px',
-                  ml: '-24px',
-                  mr: '36px',
-                },
-              }}
-            >
-              {PAGES[0].name}
-            </Button>
-            <Button
-              component={HashLink}
-              to={PAGES[1].root}
-              smooth
-              variant="text"
-              color="secondary"
-              onClick={() => model.closeRequested()}
-              sx={{
-                pl: 0,
-                my: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-start',
-                '&.active': {
-                  backgroundColor: 'rgba(51, 51, 51, 0.14)',
-                  borderRadius: 0,
-                },
-                '&::before': {
-                  content: '""',
-                  background: '#FFFFFF center center no-repeat',
-                  width: 36,
-                  height: '1px',
-                  ml: '-24px',
-                  mr: '36px',
-                },
-              }}
-            >
-              {PAGES[1].name}
-            </Button>
-            <Button
-              component={NavLink}
-              to={PAGES[2].root}
-              variant="text"
-              color="secondary"
-              onClick={() => model.closeRequested()}
-              sx={{
-                pl: 0,
-                my: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-start',
-                '&.active': {
-                  backgroundColor: 'rgba(51, 51, 51, 0.14)',
-                  borderRadius: 0,
-                },
-                '&::before': {
-                  content: '""',
-                  background: '#FFFFFF center center no-repeat',
-                  width: 36,
-                  height: '1px',
-                  ml: '-24px',
-                  mr: '36px',
-                },
-              }}
-            >
-              {PAGES[2].name}
-            </Button>
           </Box>
           <Box
             sx={{
@@ -260,7 +172,7 @@ export const Sidebar = () => {
                     <ListItem disablePadding>
                       <ListItemButton
                         component={Link}
-                        to={PATHS.office.profile.settings.info}
+                        to={PATHS.office.profile.settings.company}
                         onClick={handleCloseUserMenu}
                         sx={{ borderBottom: '3px solid #FFFFFF' }}
                       >
@@ -301,7 +213,7 @@ export const Sidebar = () => {
               </>
             ) : (
               <>
-                <RegistrationButton variant={false} onClick={() => model.closeRequested()} />
+                <RegistrationCompanyButton variant={false} onClick={() => model.closeRequested()} />
                 <LoginButton onClick={() => model.closeRequested()} />
               </>
             )}
