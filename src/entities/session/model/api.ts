@@ -50,7 +50,7 @@ export const logout = async (): Promise<void> => {
 };
 
 export const getCurrentUser = async (): Promise<User> => {
-  const user = await http.get<User>(`${API_URL}/authentication/user`, {
+  const user = await http.get<User>(`/authentication/user`, {
     withCredentials: true,
   });
 
