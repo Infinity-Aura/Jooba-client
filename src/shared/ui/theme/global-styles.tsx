@@ -1,5 +1,5 @@
 import { Interpolation } from '@emotion/styled';
-import { Theme } from '@mui/system';
+import { Theme } from '@mui/material';
 
 export const globalStyles: Interpolation<Theme> = {
   '*': {

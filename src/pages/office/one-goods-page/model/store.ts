@@ -25,7 +25,7 @@ sample({
 sample({
   clock: Gate.open,
   source: sessionModel.$user,
-  fn: (currentUser, courseId) => ({ userId: currentUser?.id ?? '', courseId }),
+  fn: (currentUser, orderId) => ({ userId: currentUser?.id ?? '', orderId }),
   target: getOrderByUserFx,
 });
 
@@ -38,8 +38,8 @@ sample({
   clock: orderModel.createOrderFx.done,
   source: {
     currentUser: sessionModel.$user,
-    course: $oneGoods,
+    order: $oneGoods,
   },
-  fn: ({ currentUser, course }) => ({ userId: currentUser?.id ?? '', courseId: course?.id ?? '' }),
+  fn: ({ currentUser, order }) => ({ userId: currentUser?.id ?? '', orderId: order?.id ?? '' }),
   target: getOrderByUserFx,
 });
