@@ -16,7 +16,7 @@ export type DropdownNavigation = {
   icon: React.ReactNode;
 };
 
-export const ITEMS: DropdownNavigation[] = [
+export const ITEMS_TOP: DropdownNavigation[] = [
   {
     title: 'Cart',
     path: PATHS.office.cart,
@@ -43,6 +43,9 @@ export const ITEMS: DropdownNavigation[] = [
     path: PATHS.office.suppliers,
     icon: <HandshakeIcon />,
   },
+];
+
+export const ITEMS_BOTTOM: DropdownNavigation[] = [
   {
     title: 'Settings',
     path: PATHS.office.profile.settings.owner,

@@ -22,7 +22,6 @@ import { model } from '../model';
 const BootstrapSelect = styled(InputBase)(() => ({
   '& .MuiInputBase-input': {
     outlined: 'none',
-    borderRadius: '8px',
     padding: '9px 11px',
     '&:focus': {
       outlined: 'none',
@@ -134,7 +133,6 @@ export const SettingsOwnerForm = () => {
             type="text"
             id="firstName"
             defaultValue={user.firstName}
-            sx={{ borderRadius: '8px' }}
             inputProps={{ style: { padding: '9px 11px', fontWeight: 300 } }}
             InputLabelProps={{ style: { fontWeight: 300 } }}
           />
@@ -152,7 +150,6 @@ export const SettingsOwnerForm = () => {
             type="text"
             id="lastName"
             defaultValue={user.lastName}
-            sx={{ borderRadius: '8px' }}
             inputProps={{ style: { padding: '9px 11px', fontWeight: 300 } }}
             InputLabelProps={{ style: { fontWeight: 300 } }}
           />
@@ -189,7 +186,6 @@ export const SettingsOwnerForm = () => {
             type="date"
             id="birth"
             defaultValue={user.birth}
-            sx={{ borderRadius: '8px' }}
             inputProps={{ style: { padding: '9px 11px', fontWeight: 300 } }}
             InputLabelProps={{ style: { fontWeight: 300 } }}
           />

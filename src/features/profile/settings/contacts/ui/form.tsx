@@ -43,7 +43,6 @@ export const SettingsContactsForm = () => {
             type="phoneNumber"
             id="phoneNumber"
             defaultValue={user.phoneNumber}
-            sx={{ borderRadius: '8px' }}
             inputProps={{ style: { padding: '9px 11px', fontWeight: 300 } }}
             InputLabelProps={{ style: { fontWeight: 300 } }}
           />
@@ -61,7 +60,6 @@ export const SettingsContactsForm = () => {
             type="email"
             id="email"
             defaultValue={user.email}
-            sx={{ borderRadius: '8px' }}
             inputProps={{ style: { padding: '9px 11px', fontWeight: 300 } }}
             InputLabelProps={{ style: { fontWeight: 300 } }}
           />

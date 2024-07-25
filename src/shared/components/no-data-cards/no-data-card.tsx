@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box, CardMedia, Typography } from 'shared/ui/kit';
 
-import noData from './NoData.svg';
+import noData from './no-data.svg';
 
 export const NoDataCard: React.FC<{
   title?: string;

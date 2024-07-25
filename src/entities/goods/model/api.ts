@@ -35,6 +35,15 @@ export const createOneGoods = async (goods: Partial<OneGoods>): Promise<boolean>
   }
 };
 
+export const createGoods = async (goods: Partial<OneGoods>[]): Promise<boolean> => {
+  try {
+    await http.post(`/goods/bulk`, goods);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
 export const deleteOneGoods = async (goodsId: string): Promise<boolean> => {
   try {
     await http.delete(`/goods/${goodsId}`);

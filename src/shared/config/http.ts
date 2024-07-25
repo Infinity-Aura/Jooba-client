@@ -53,6 +53,6 @@ http.interceptors.response.use(
       localStorage.removeItem('refresh_token');
     }
 
-    throw error.response.data.message;
+    throw error.response.data;
   },
 );

@@ -57,7 +57,6 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-          borderRadius: '24px',
           textAlign: 'center',
         },
       },
@@ -66,7 +65,6 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-          borderRadius: '21px',
         },
       },
     },
@@ -75,7 +73,6 @@ export const theme = createTheme({
         root: {
           boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
           border: '3px solid #E0673A',
-          borderRadius: '24px',
           minWidth: 116,
           textAlign: 'center',
           '&.Mui-disabled': {
@@ -123,18 +120,20 @@ export const theme = createTheme({
     MuiTextField: {
       styleOverrides: {
         root: {
-          background: '#FFFFFF',
-          borderRadius: '16px',
-          border: '3px solid #E0673A',
-          color: '#FFFFFF',
-          outline: 'none',
-          fontWeight: 300,
-          fontSize: '1.2rem',
-          lineHeight: '1.65rem',
-          '&:hover': {
-            border: '3px solid rgba(224, 103, 58, 0.8)',
+          '& .MuiInput-underline:after': {
+            border: '3px solid #E0673A',
           },
-          '& fieldset': { border: 'none' },
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              border: '3px solid #E0673A',
+            },
+            '&:hover fieldset': {
+              border: '3px solid #E0673A',
+            },
+            '&.Mui-focused fieldset': {
+              border: '3px solid #E0673A',
+            },
+          },
         },
       },
     },
@@ -142,7 +141,6 @@ export const theme = createTheme({
       styleOverrides: {
         select: {
           background: '#FFFFFF',
-          borderRadius: '8px',
           border: '3px solid #E0673A',
           outline: 'none',
           fontWeight: 300,
@@ -164,7 +162,6 @@ export const theme = createTheme({
           '& .MuiPaper-root': {
             background: '#E0673A',
             boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-            borderRadius: '8px',
           },
         },
       },
@@ -193,13 +190,11 @@ export const theme = createTheme({
       lineHeight: '1.65rem',
     },
     h5: {
-      fontFamily: '"Source Serif Pro", serif',
       fontWeight: 300,
       fontSize: '0.8rem',
       lineHeight: '1.1rem',
     },
     h6: {
-      fontFamily: '"Source Serif Pro", serif',
       fontWeight: 300,
       fontSize: '0.7rem',
       lineHeight: '0.95rem',
@@ -210,7 +205,6 @@ export const theme = createTheme({
       lineHeight: '1.95rem',
     },
     subtitle2: {
-      fontFamily: '"Source Serif Pro", serif',
       fontWeight: 300,
       fontSize: '1.2rem',
       lineHeight: '1.65rem',
@@ -221,7 +215,6 @@ export const theme = createTheme({
       lineHeight: '1.2rem',
     },
     body2: {
-      fontFamily: '"Source Serif Pro", serif',
       fontWeight: 500,
       fontSize: '0.6rem',
       lineHeight: '0.75rem',
@@ -234,7 +227,7 @@ export const theme = createTheme({
     },
   },
   shape: {
-    borderRadius: 16,
+    borderRadius: 8,
   },
   breakpoints: {
     values: {

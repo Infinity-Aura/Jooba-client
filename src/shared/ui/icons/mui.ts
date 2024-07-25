@@ -39,4 +39,5 @@ export {
   LogoutRounded as LogoutRoundedIcon,
   Delete as DeleteIcon,
   FilterList as FilterListIcon,
+  Publish as PublishIcon,
 } from '@mui/icons-material';

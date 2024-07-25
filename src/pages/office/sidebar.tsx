@@ -20,8 +20,9 @@ import {
   Menu,
   Typography,
   Tooltip,
+  Box,
 } from 'shared/ui/kit';
-import { ITEMS } from './config';
+import { ITEMS_TOP, ITEMS_BOTTOM } from './config';
 import { useStore } from 'effector-react';
 import { sessionModel } from 'entities/session';
 import { NavLink } from 'react-router-dom';
@@ -184,8 +185,60 @@ export const Sidebar = () => {
         </IconButton>
       </DrawerHeader>
       <Divider />
-      <List>
-        {ITEMS.filter((item) => !item.perms || item.perms.includes(user?.role ?? '')).map(
+      <List
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          height: '100%',
+        }}
+      >
+        <Box>
+          {ITEMS_TOP.filter((item) => !item.perms || item.perms.includes(user?.role ?? '')).map(
+            (page) => (
+              <ListItem
+                key={page.path}
+                disablePadding
+                sx={{
+                  display: 'block',
+                  color: '#FFFFFF',
+                  '&.active': {
+                    backgroundColor: 'rgba(51, 51, 51, 0.14)',
+                  },
+                }}
+                component={NavLink}
+                to={page.path}
+              >
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? 'initial' : 'center',
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : 'auto',
+                      justifyContent: 'center',
+                      color: '#FFFFFF',
+                    }}
+                  >
+                    {page.icon}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={page.title}
+                    primaryTypographyProps={{
+                      variant: 'h5',
+                      sx: { fontWeight: 800 },
+                    }}
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            ),
+          )}
+        </Box>
+        {ITEMS_BOTTOM.filter((item) => !item.perms || item.perms.includes(user?.role ?? '')).map(
           (page) => (
             <ListItem
               key={page.path}
@@ -216,7 +269,14 @@ export const Sidebar = () => {
                 >
                   {page.icon}
                 </ListItemIcon>
-                <ListItemText primary={page.title} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText
+                  primary={page.title}
+                  primaryTypographyProps={{
+                    variant: 'h5',
+                    sx: { fontWeight: 800 },
+                  }}
+                  sx={{ opacity: open ? 1 : 0 }}
+                />
               </ListItemButton>
             </ListItem>
           ),

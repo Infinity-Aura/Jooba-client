@@ -122,7 +122,6 @@ export const SettingsCompanyForm = () => {
             type="text"
             id="name"
             defaultValue={company.name}
-            sx={{ borderRadius: '8px' }}
             inputProps={{ style: { padding: '9px 11px', fontWeight: 300 } }}
             InputLabelProps={{ style: { fontWeight: 300 } }}
           />
@@ -140,7 +139,6 @@ export const SettingsCompanyForm = () => {
             type="text"
             id="firstName"
             defaultValue={company.country}
-            sx={{ borderRadius: '8px' }}
             inputProps={{ style: { padding: '9px 11px', fontWeight: 300 } }}
             InputLabelProps={{ style: { fontWeight: 300 } }}
           />
@@ -158,7 +156,6 @@ export const SettingsCompanyForm = () => {
             type="text"
             id="address"
             defaultValue={company.address}
-            sx={{ borderRadius: '8px' }}
             inputProps={{ style: { padding: '9px 11px', fontWeight: 300 } }}
             InputLabelProps={{ style: { fontWeight: 300 } }}
           />
@@ -176,7 +173,6 @@ export const SettingsCompanyForm = () => {
             type="date"
             id="dateOfEstablishment"
             defaultValue={company.dateOfEstablishment}
-            sx={{ borderRadius: '8px' }}
             inputProps={{ style: { padding: '9px 11px', fontWeight: 300 } }}
             InputLabelProps={{ style: { fontWeight: 300 } }}
           />

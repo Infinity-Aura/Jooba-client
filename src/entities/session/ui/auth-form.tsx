@@ -20,7 +20,6 @@ export const AuthForm = ({ children, type }: { children: React.ReactNode; type: 
           alignItems: 'center',
           justifyContent: 'center',
           boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-          borderRadius: '16px',
           maxWidth: 672,
           width: '100%',
           py: '41px',

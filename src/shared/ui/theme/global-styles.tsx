@@ -16,7 +16,7 @@ export const globalStyles: Interpolation<Theme> = {
   },
   '*::-webkit-scrollbar-thumb': {
     backgroundColor: 'rgba(0,0,0,.43)',
-    borderRadius: '0.2rem',
+    borderRadius: '1rem',
   },
   html: {
     height: '100%',

@@ -42,7 +42,6 @@ export const SettingsPasswordForm = () => {
             name="oldPassword"
             type="password"
             id="oldPassword"
-            sx={{ borderRadius: '8px' }}
             inputProps={{ style: { padding: '9px 11px', fontWeight: 300 } }}
             InputLabelProps={{ style: { fontWeight: 300 } }}
           />
@@ -59,7 +58,6 @@ export const SettingsPasswordForm = () => {
             name="newPassword"
             type="password"
             id="newPassword"
-            sx={{ borderRadius: '8px' }}
             inputProps={{ style: { padding: '9px 11px', fontWeight: 300 } }}
             InputLabelProps={{ style: { fontWeight: 300 } }}
           />
@@ -76,7 +74,6 @@ export const SettingsPasswordForm = () => {
             name="newPasswordRepeat"
             type="password"
             id="newPasswordRepeat"
-            sx={{ borderRadius: '8px' }}
             inputProps={{ style: { padding: '9px 11px', fontWeight: 300 } }}
             InputLabelProps={{ style: { fontWeight: 300 } }}
           />

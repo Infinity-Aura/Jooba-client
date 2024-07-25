@@ -112,7 +112,6 @@ export const RegistrationSupplierForm = () => {
           py: '25px',
           boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
           border: 'none',
-          borderRadius: '16px',
         }}
       >
         Sign Up

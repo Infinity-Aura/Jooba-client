@@ -53,6 +53,11 @@ export {
   styled,
   useTheme,
   alpha,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
 } from '@mui/material';
 
 export { visuallyHidden } from '@mui/utils';

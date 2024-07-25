@@ -76,7 +76,6 @@ export const OrderStatus: React.FC<{ status: string }> = ({ status }) => {
       sx={{
         background: '#FFFFFF',
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-        borderRadius: '16px',
         p: '11px',
       }}
     >
