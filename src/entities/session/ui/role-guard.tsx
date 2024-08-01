@@ -13,7 +13,7 @@ export const RoleGuard: React.FC<{
   const user = useStore(model.$user);
 
   if (!roles.includes(user?.role ?? '')) {
-    return <Navigate to={PATHS.office.allgoods} />;
+    return <Navigate to={PATHS.office.allGoods} />;
   }
 
   return <>{children}</>;

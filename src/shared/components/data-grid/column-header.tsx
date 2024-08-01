@@ -47,7 +47,6 @@ export function ColumnHeader<TData>({
         sx={{
           display: 'flex',
           alignItems: 'center',
-          background: theme.palette.background.paper,
           justifyContent: 'space-between',
           '&:hover .resizer': { visibility: canResize ? 'visible' : 'hidden' },
           '&:hover .sorter': { visibility: canSort ? 'visible' : 'hidden' },

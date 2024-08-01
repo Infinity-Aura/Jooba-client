@@ -30,12 +30,12 @@ export const ITEMS_TOP: DropdownNavigation[] = [
   },
   {
     title: 'All Goods',
-    path: PATHS.office.allgoods,
+    path: PATHS.office.allGoods,
     icon: <StoreIcon />,
   },
   {
     title: 'My Goods',
-    path: PATHS.office.mygoods,
+    path: PATHS.office.myGoods,
     icon: <StorefrontIcon />,
   },
   {

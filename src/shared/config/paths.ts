@@ -12,8 +12,9 @@ export const PATHS = {
     root: '/office',
     cart: '/office/cart',
     orders: '/office/orders',
-    allgoods: '/office/allgoods',
-    mygoods: '/office/mygoods',
+    allGoods: '/office/all-goods',
+    myGoods: '/office/my-goods',
+    oneGoods: '/office/one-goods',
     suppliers: '/office/suppliers',
     settings: '/office/settings',
     profile: {

@@ -28,7 +28,7 @@ sample({ clock: Gate.open, target: getCurrentUserFx });
 
 sample({
   clock: [loginFx.doneData, registrationFx.doneData],
-  fn: () => PATHS.office.allgoods,
+  fn: () => PATHS.office.allGoods,
   target: [getCurrentUserFx, navigateToFx],
 });
 

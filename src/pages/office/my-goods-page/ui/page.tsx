@@ -1,24 +1,13 @@
 import React from 'react';
 import { useGate, useStore } from 'effector-react';
 
-import {
-  AppBar,
-  Box,
-  Button,
-  Card,
-  Container,
-  Menu,
-  MenuItem,
-  Toolbar,
-  Typography,
-} from 'shared/ui/kit';
+import { AppBar, Box, Button, Card, Container, Menu, Toolbar, Typography } from 'shared/ui/kit';
 
 import * as model from '../model';
 import { CreateGoodsForm, CreateGoodsMenuItem } from 'features/goods/create';
 import { OneGoods } from 'entities/goods/types';
 import { DataGrid, createColumnHelper } from 'shared/components/data-grid';
 import { ActionsMenu } from 'shared/components/actions-menu';
-// import { AdminOneGoodsDeleteMenuItem } from 'features/admin/course/delete';
 import { AddCircleRoundedIcon, CancelOutlinedIcon, CheckCircleOutlinedIcon } from 'shared/ui/icons';
 import { DeleteOneGoods } from 'features/goods/delete';
 import { ImportGoodsForm, ImportGoodsMenuItem } from 'features/goods/import';
@@ -44,12 +33,6 @@ const courseColumnsDef = [
     size: 200,
     cell: ({ row: { original: record } }) => <Typography variant="h5">{record.name}</Typography>,
   }),
-  courseColumnHelper.accessor((row) => row.sale, {
-    id: 'sale',
-    header: 'Sale',
-    size: 200,
-    cell: ({ row: { original: record } }) => <Typography variant="h5">{record.sale}</Typography>,
-  }),
   courseColumnHelper.accessor((row) => row.article, {
     id: 'article',
     header: 'Article',
@@ -72,6 +55,12 @@ const courseColumnsDef = [
     id: 'price',
     header: 'Price',
     cell: ({ row: { original: record } }) => <Typography variant="h5">{record.price}</Typography>,
+  }),
+  courseColumnHelper.accessor((row) => row.sale, {
+    id: 'sale',
+    header: 'Sale',
+    size: 200,
+    cell: ({ row: { original: record } }) => <Typography variant="h5">{record.sale}</Typography>,
   }),
   courseColumnHelper.accessor(() => 'availability', {
     id: 'availability',
@@ -117,33 +106,35 @@ export const MyGoodsPage = () => {
         </Toolbar>
       </AppBar>
       <Container maxWidth="xl">
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', pb: 2 }}>
-          <Button
-            startIcon={<AddCircleRoundedIcon color="secondary" />}
-            variant="contained"
-            onClick={(event) => setAnchorEl(event.currentTarget)}
-          >
-            Add goods
-          </Button>
-          <Menu anchorEl={anchorEl} open={open} onClose={handleCloseMenu}>
-            <CreateGoodsMenuItem onClick={handleCloseMenu} />
-            <ImportGoodsMenuItem onClick={handleCloseMenu} />
-          </Menu>
-        </Box>
-        <DataGrid<OneGoods>
-          data={goods ?? []}
-          columns={courseColumnsDef}
-          params={{
-            page: params.page,
-            pageSize: params.pageSize,
-            totalCount: goods?.length ?? 0,
-            rowsPerPage: [2, 4, 50],
-          }}
-          paramsChanged={({ page, pageSize }) =>
-            setParams({ page: page ?? params.page, pageSize: pageSize ?? params.pageSize })
-          }
-          loading={loading}
-        />
+        <Card sx={{ p: 2 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', pb: 2 }}>
+            <Button
+              startIcon={<AddCircleRoundedIcon color="secondary" />}
+              variant="contained"
+              onClick={(event) => setAnchorEl(event.currentTarget)}
+            >
+              Add goods
+            </Button>
+            <Menu anchorEl={anchorEl} open={open} onClose={handleCloseMenu}>
+              <CreateGoodsMenuItem onClick={handleCloseMenu} />
+              <ImportGoodsMenuItem onClick={handleCloseMenu} />
+            </Menu>
+          </Box>
+          <DataGrid<OneGoods>
+            data={goods ?? []}
+            columns={courseColumnsDef}
+            params={{
+              page: params.page,
+              pageSize: params.pageSize,
+              totalCount: goods?.length ?? 0,
+              rowsPerPage: [2, 4, 50],
+            }}
+            paramsChanged={({ page, pageSize }) =>
+              setParams({ page: page ?? params.page, pageSize: pageSize ?? params.pageSize })
+            }
+            loading={loading}
+          />
+        </Card>
       </Container>
       <CreateGoodsForm />
       <ImportGoodsForm />

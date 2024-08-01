@@ -15,31 +15,31 @@ export const getOrderByUserFx = attach({ effect: orderModel.getOrderByUserFx });
 export const $oneGoods = domain.store<OneGoods | null>(null);
 export const $courseOrder = domain.store<Order | null>(null);
 
-$oneGoods.on(getOneGoodsFx.doneData, (_, course) => course).reset([Gate.close]);
+$oneGoods.on(getOneGoodsFx.doneData, (_, oneGoods) => oneGoods).reset([Gate.close]);
 
 sample({
   clock: Gate.open,
   target: getOneGoodsFx,
 });
 
-sample({
-  clock: Gate.open,
-  source: sessionModel.$user,
-  fn: (currentUser, orderId) => ({ userId: currentUser?.id ?? '', orderId }),
-  target: getOrderByUserFx,
-});
+// sample({
+//   clock: Gate.open,
+//   source: sessionModel.$user,
+//   fn: (currentUser, orderId) => ({ userId: currentUser?.id ?? '', orderId }),
+//   target: getOrderByUserFx,
+// });
 
-sample({
-  clock: getOrderByUserFx.doneData,
-  target: $courseOrder,
-});
+// sample({
+//   clock: getOrderByUserFx.doneData,
+//   target: $courseOrder,
+// });
 
-sample({
-  clock: orderModel.createOrderFx.done,
-  source: {
-    currentUser: sessionModel.$user,
-    order: $oneGoods,
-  },
-  fn: ({ currentUser, order }) => ({ userId: currentUser?.id ?? '', orderId: order?.id ?? '' }),
-  target: getOrderByUserFx,
-});
+// sample({
+//   clock: orderModel.createOrderFx.done,
+//   source: {
+//     currentUser: sessionModel.$user,
+//     order: $oneGoods,
+//   },
+//   fn: ({ currentUser, order }) => ({ userId: currentUser?.id ?? '', orderId: order?.id ?? '' }),
+//   target: getOrderByUserFx,
+// });

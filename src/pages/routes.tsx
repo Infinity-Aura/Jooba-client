@@ -21,6 +21,7 @@ import { CartPage } from './office/cart-page/ui/cart-page';
 import { MyGoodsPage } from './office/my-goods-page';
 import { SuppliersPage } from './office/suppliers-page';
 import { MyOrdersPage } from './office/my-orders-page';
+import { OneGoodsPage } from './office/one-goods-page';
 
 const routesMap = [
   {
@@ -58,12 +59,16 @@ const routesMap = [
         element: <CartPage />,
       },
       {
-        path: PATHS.office.allgoods,
+        path: PATHS.office.allGoods,
         element: <GoodsPage />,
       },
       {
-        path: PATHS.office.mygoods,
+        path: PATHS.office.myGoods,
         element: <MyGoodsPage />,
+      },
+      {
+        path: PATHS.office.oneGoods + '/:oneGoodsId',
+        element: <OneGoodsPage />,
       },
       {
         path: PATHS.office.suppliers,
